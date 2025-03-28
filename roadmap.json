@@ -8,7 +8,7 @@
       "objetivo": "Base sólida multiusuario con login, roles y modelado de usuario",
       "entregables": [
         "Servidor FastAPI funcional con Docker",
-        "Modelo de usuario: email, contraseña, rol, scopes, access_token y refresh_token",
+        "Modelo de usuario: email, contraseña, rol, scopes, access_token y refresh_token (sin crear logica de eBay aun)",
         "Endpoints: /register, /login",
         "Protección de rutas con JWT y scopes",
         "Formulario básico de registro/login "
