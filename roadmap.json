@@ -1,0 +1,100 @@
+{
+  "jornada": "1 persona, 4 horas diarias, sin descansos",
+  "objetivo_general": "Crear una API multiusuario que permita administrar inventario, generar descripciones con OpenAI y publicar artículos en eBay usando su API oficial.",
+  "semanas": [
+    {
+      "semana": 1,
+      "titulo": "Sistema de usuarios y autenticación",
+      "objetivo": "Base sólida multiusuario con login, roles y tokens de eBay",
+      "entregables": [
+        "Servidor FastAPI funcional con Docker",
+        "Modelo de usuario: email, contraseña, rol, scopes, access_token y refresh_token",
+        "Endpoints: /register, /login",
+        "Protección de rutas con JWT y scopes",
+        "Formulario básico de registro/login (opcional)"
+      ]
+    },
+    {
+      "semana": 2,
+      "titulo": "Generación de descripciones con OpenAI",
+      "objetivo": "Permitir al usuario generar descripciones automáticas para sus productos",
+      "entregables": [
+        "Integración con OpenAI (GPT-4 o modelo fine-tuned)",
+        "Endpoint /describe/",
+        "Entrada: specs, título, categoría, estado",
+        "Salida: descripción completa con bullets",
+        "Guardado en la base de datos",
+        "Soporte multiusuario"
+      ]
+    },
+    {
+      "semana": 3,
+      "titulo": "Inventario local (pre-publicación)",
+      "objetivo": "Permitir a cada usuario gestionar sus productos antes de publicarlos",
+      "entregables": [
+        "CRUD completo de productos",
+        "Relación producto-usuario",
+        "Specs, título, descripción, precio, estado, etc.",
+        "Vinculación con descripción generada"
+      ]
+    },
+    {
+      "semana": 4,
+      "titulo": "Integración con eBay API - Parte 1",
+      "objetivo": "Crear productos en eBay usando inventoryItem",
+      "entregables": [
+        "Autenticación automática vía refresh_token",
+        "Creación de inventoryItem con SKU",
+        "Manejo de errores de eBay (401, 400, 429)",
+        "Guardar estado de sincronización"
+      ]
+    },
+    {
+      "semana": 5,
+      "titulo": "Integración con eBay API - Parte 2",
+      "objetivo": "Crear y publicar ofertas en eBay",
+      "entregables": [
+        "create_offer() y publish_offer() por SKU",
+        "Guardar offer_id, listing_id y estado",
+        "Endpoint /publish/sku",
+        "Verificación de estado /status/sku",
+        "Protección por scopes"
+      ]
+    },
+    {
+      "semana": 6,
+      "titulo": "Subida de imágenes y multimedia",
+      "objetivo": "Manejar imágenes y videos asociados al producto",
+      "entregables": [
+        "Endpoint /upload/sku",
+        "Límite de 10 archivos por producto",
+        "Soporte para JPEG, PNG, MP4",
+        "Carpeta temporal por usuario",
+        "Asociación con inventario local"
+      ]
+    },
+    {
+      "semana": 7,
+      "titulo": "Tareas en segundo plano con Celery + Redis",
+      "objetivo": "Permitir agendamiento y automatización de tareas",
+      "entregables": [
+        "Integración de Celery con Redis",
+        "Agendar publicación",
+        "Reintentos automáticos",
+        "Regeneración de descripciones",
+        "Limpieza de archivos temporales"
+      ]
+    },
+    {
+      "semana": 8,
+      "titulo": "Testing, documentación y despliegue",
+      "objetivo": "Dejar el sistema listo para producción",
+      "entregables": [
+        "Testing con pytest",
+        "Swagger limpio con documentación de roles y scopes",
+        "Docker Compose final con todos los servicios",
+        "Deploy local con checklist de producción"
+      ]
+    }
+  ]
+}
