@@ -4,14 +4,14 @@
   "semanas": [
     {
       "semana": 1,
-      "titulo": "Sistema de usuarios y autenticación",
-      "objetivo": "Base sólida multiusuario con login, roles y tokens de eBay",
+      "titulo": "Sistema de usuarios de servidor(no eBay) y autenticación (del servidor)",
+      "objetivo": "Base sólida multiusuario con login, roles y modelado de usuario",
       "entregables": [
         "Servidor FastAPI funcional con Docker",
         "Modelo de usuario: email, contraseña, rol, scopes, access_token y refresh_token",
         "Endpoints: /register, /login",
         "Protección de rutas con JWT y scopes",
-        "Formulario básico de registro/login (opcional)"
+        "Formulario básico de registro/login "
       ]
     },
     {
