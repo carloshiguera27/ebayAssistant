@@ -5,5 +5,8 @@ app = FastAPI(title=settings.app_name)
 
 @app.get("/status")
 def status():
-    return {"status": "ok", "user": "not_logged_in"}
+    return {
+        "status": "ok", 
+        "user": "not_logged_in"
+    }
 
